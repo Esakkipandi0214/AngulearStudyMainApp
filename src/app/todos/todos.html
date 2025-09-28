@@ -1,0 +1,22 @@
+<!-- <p>todos works!</p>
+<p>
+    {{TodoItems()[0].title}}
+</p> -->
+<!-- 
+@for(todo of TodoItems(); track todo.id){
+    <p>
+        {{todo.title}}
+    </p>
+} -->
+
+<h3>Todos List</h3>
+
+@if (!TodoItems().length) {
+ <p>Loading ...</p>
+}
+
+<ul class="todos">
+    @for (todo of TodoItems(); track $index) {
+     <app-todo-item [todo]="todo"/>
+    }
+</ul>
